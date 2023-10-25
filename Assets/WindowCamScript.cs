@@ -23,7 +23,7 @@ public class WindowCamScript : MonoBehaviour
         transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
         if (transform.eulerAngles.x > 36 && transform.eulerAngles.x < 100)
         {
-            
+                
             transform.eulerAngles = new Vector3(35, transform.eulerAngles.y, transform.eulerAngles.z);
         }
         if (transform.eulerAngles.x < 355 && transform.eulerAngles.x > 100)

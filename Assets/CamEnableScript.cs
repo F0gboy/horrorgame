@@ -17,13 +17,14 @@ public class CamEnableScript : MonoBehaviour
     // Update is called once per frame
     void HitByRay()
     {
+        Debug.Log("Ray Works");
         if (Input.GetKeyDown(KeyCode.E))
         {
 
 
             Vector3 forward = transform.TransformDirection(Vector3.forward);
             Vector3 toOther = Player.transform.position - transform.position;
-            Debug.Log(Vector3.Distance(Player.transform.position, transform.position) + " " + Vector3.Dot(forward.normalized, toOther.normalized));
+            Debug.Log(Vector3.Distance(Player.transform.position, transform.position));
             if (Vector3.Distance(Player.transform.position, transform.position) < 2f)
             {
                 Debug.Log("Did the thing");

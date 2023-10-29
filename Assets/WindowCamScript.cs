@@ -9,10 +9,11 @@ public class WindowCamScript : MonoBehaviour
 
     private float yaw = 0.0f;
     private float pitch = 0.0f;
+    Camera cam;
 
     void Start()
     {
-
+        cam = gameObject.GetComponent<Camera>();
     }
 
     // Update is called once per frame
@@ -30,6 +31,21 @@ public class WindowCamScript : MonoBehaviour
         {
 
             transform.eulerAngles = new Vector3(-5, transform.eulerAngles.y, transform.eulerAngles.z);
+        }
+
+        if (Input.GetMouseButton(1))
+        {
+            if(cam.fieldOfView > 15)
+            {
+                cam.fieldOfView -= 20f * Time.deltaTime;
+            }
+        }
+        else
+        {
+            if (cam.fieldOfView < 40)
+            {
+                cam.fieldOfView += 20f * Time.deltaTime;
+            }
         }
 
         //if (transform.eulerAngles.y > 221)
